@@ -11,7 +11,7 @@ interface Opts {
   saturation?: number;
   lightness?:  number;
   likeness?:   [number, number];
-  algorithm:   allowedAlgs;
+  algorithm?:  allowedAlgs;
 }
 
 // Compute SHA-256 hash

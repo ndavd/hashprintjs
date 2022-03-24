@@ -1,7 +1,7 @@
 {
   "name": "hashprintjs",
-  "version": "1.0.0",
-  "description": "Generates unique deterministic avatar from string input.",
+  "version": "1.0.1",
+  "description": "Generates pretty identicons from string input.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
