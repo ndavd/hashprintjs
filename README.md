@@ -1,3 +1,4 @@
+![npm](https://img.shields.io/npm/v/hashprintjs?style=flat-square)
 <p align="center">
   <img src=".github/hashprintjs_SHA256.png" width="150" />
   <img src=".github/hashprintjs_SHA384.png" width="150" />
@@ -16,19 +17,19 @@ image that allows you to easily distinguish and identify a piece of data._
 Supports both client and server (making use of the **Canvas API** and
 **node-canvas**, respectively).
 
-### Installation
+## Installation
 ```
 $ yarn add hashprintjs
 ```
 
-### Usage
+## Usage
 ```js
 const hashprint = require("hashprintjs");
 const dataURL = await hashprint({ data: "hashprint", size: 40 });
 ```
 You can then take the `dataURL` and assign it to an image src for example.
 
-### Customization
+## Customization
 The function takes an object as argument which has the following properties:
 | Properties    | Description                                                                                                                                                                                                                                                   |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
