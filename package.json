@@ -1,6 +1,6 @@
 {
   "name": "hashprintjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generates pretty identicons from string input.",
   "main": "dist/index.js",
   "scripts": {
@@ -23,9 +23,11 @@
     "url": "https://github.com/ndavd/hashprintjs/issues"
   },
   "homepage": "https://github.com/ndavd/hashprintjs",
+  "dependencies": {
+    "canvas": "^2.9.1"
+  },
   "devDependencies": {
     "@types/node": "^17.0.22",
-    "canvas": "^2.9.1",
     "typescript": "^4.6.2"
   }
 }
