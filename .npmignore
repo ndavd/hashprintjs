@@ -1,4 +1,5 @@
 src
 tsconfig.json
-.yarn
+/.yarn
 yarn.lock
+/.github
