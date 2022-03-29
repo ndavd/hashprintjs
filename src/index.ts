@@ -14,12 +14,12 @@ interface Opts {
   algorithm?:  allowedAlgs;
 }
 
-// Compute SHA-256 hash
+// Compute hash
 const digestData = async (d: string, hashFunction: allowedAlgs): Promise<ArrayBuffer> => {
   const encoder = new TextEncoder();
   const data = encoder.encode(d);
 
-  let hash;
+  let hash: ArrayBuffer;
   if (isNode) {
     hash = await eval("require")("crypto").webcrypto.subtle.digest(hashFunction, data);
   } else {
