@@ -1,6 +1,6 @@
 {
   "name": "hashprintjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generates pretty identicons from string input.",
   "main": "dist/index.js",
   "scripts": {

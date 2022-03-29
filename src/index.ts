@@ -32,16 +32,11 @@ const digestData = async (d: string, hashFunction: allowedAlgs): Promise<ArrayBu
 const GenerateHashprint = async (opts: Opts): Promise<string> => {
 
   // Set defaults
+  opts.size       = opts.size       || 140;
+  opts.bg         = opts.bg         || "#00000000";
   opts.saturation = opts.saturation || 0.7;
   opts.lightness  = opts.lightness  || 0.5;
-  opts.bg         = opts.bg         || "#00000000";
   opts.algorithm  = opts.algorithm  || "SHA-256";
-
-  if (opts.size) {
-    opts.size = Math.ceil(opts.size / 7) * 7;
-  } else {
-    opts.size = 140;
-  }
 
   if (opts.likeness && opts.likeness[0] + opts.likeness[1] <= 1) {
     opts.likeness = opts.likeness;
@@ -100,17 +95,23 @@ const GenerateHashprint = async (opts: Opts): Promise<string> => {
   );
 
   // Draw hashprint
-  const l = opts.size / 7;
+  const l = Math.floor(opts.size / 7);
+  const extra = opts.size % 7;
 
   for (let i = 0; i < active.length; i++) {
     if (active[i] === 0) continue;
 
     ctx.fillStyle =
       `hsl(${(active[i] === 1)?hue1:hue2}, ${opts.saturation * 100}%, ${opts.lightness * 100}%)`;
+
+    const x = (i % 7);
+    const y = Math.floor(i / 7);
+
     ctx.fillRect(
-      (i % 7) * l,
-      Math.floor(i / 7) * l,
-      l, l
+      (x <= 3)?(x * l):(x * l + extra),
+      (y <= 3)?(y * l):(y * l + extra),
+      (x === 3)?(l+extra):l,
+      (y === 3)?(l+extra):l,
     );
   }
 
