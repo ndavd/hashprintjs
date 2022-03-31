@@ -118,5 +118,5 @@ const GenerateHashprint = async (opts: Opts): Promise<string> => {
   return canvas.toDataURL();
 }
 
-// export default GenerateHashprint;
-module.exports = GenerateHashprint
+module.exports = GenerateHashprint;
+export default GenerateHashprint;
